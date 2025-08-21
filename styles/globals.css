@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -120,4 +120,46 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom animations for testing */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Testing-specific classes */
+.dynamic-id {
+  /* This class will have changing IDs for testing fragile selectors */
+}
+
+.text-content-changes {
+  /* This class will have changing text content */
+}
+
+.complex-nested-dom {
+  /* This class will have deeply nested DOM structure */
 }
